@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "wise-send-money",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
