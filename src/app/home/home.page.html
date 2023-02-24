@@ -7,14 +7,32 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Lista de solicitudes</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let solicitud of solicitudes">
+    <ion-label>
+      <h3>
+        {{ solicitud.usuario }}
+      </h3>
+      <span>
+        {{ solicitud.correo }}
+      </span>
+    </ion-label>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="procesar(solicitud)">
+        <ion-icon slot="end" name="add"></ion-icon>
+        procesar
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-list>
+
+<ion-button (click)="crearD()" expand="block" fill="clear" shape="round">
+  crear destinatario
+</ion-button>
+
 </ion-content>
